@@ -18,7 +18,6 @@ def home():
 def output():
     # if this url was requested through a post method
     if request.method == "POST":
-        #print(request.form["house_age"])
         # extract the data that was submitted to this url
         input_data = [float(x) for x in request.form.values()]
         # get the data ready to be used for a prediction
@@ -32,4 +31,4 @@ def output():
         return render_template("output.html", prediction=pred)
     return render_template("output.html")
 if __name__=="__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0")
